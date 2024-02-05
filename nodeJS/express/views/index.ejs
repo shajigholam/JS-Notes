@@ -1,0 +1,29 @@
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <!-- use - at the beginning of the statement -->
+  <%- include('./partials/nav.ejs') %>
+
+  <div class="blogs content">
+    <h2>All Blogs</h2>
+
+    <!-- using js in ejs tags -->
+    <% if (blogs.length > 0) { %>
+      <% blogs.forEach(blog => { %>
+        <!-- make the rout for each blog based on the id -->
+        <a class="single" href="/blogs/<%= blog._id %>">
+          <!-- we put = when we want to output the value to the screen -->
+          <h3 class="title"><%= blog.title %></h3> 
+          <p class="snippet"><%= blog.snippet %></p>
+        </a> 
+      <% }) %>
+    <% } else { %>
+      <p>There are no blogs to display...</p>
+    <% } %>
+    
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

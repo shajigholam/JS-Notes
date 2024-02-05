@@ -1,0 +1,35 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="details content">
+    <h2><%= blog.title %></h2>
+    <div class="content">
+      <p><%= blog.body %></p>
+    </div>
+    <!-- data-doc is a custom data attribute in HTML. Custom data attributes allow us to store extra information on HTML elements, and they are prefixed with "data-" -->
+    <a class="delete" data-doc="<%= blog._id %>">delete</a>
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+
+  <script>
+    const trashcan = document.querySelector('a.delete');
+
+    trashcan.addEventListener('click', (e) => {
+      const endpoint = `/blogs/${trashcan.dataset.doc}`;
+    //   The fetch function is used to make an HTTP request to the specified endpoint. In this case, it's a DELETE request
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect) //redirect to the front-end(redirect in the server-side was /blogs)
+      .catch(err => console.log(err));
+    });
+    // 1-click on delete 2-sends the request to the server 
+    //3-the server delete the doc based on the id and sends the json as the respond 4-here we take the json and pass it into a js obj. that we can use
+  </script>
+</body>
+</html>
