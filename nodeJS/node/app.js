@@ -24,7 +24,7 @@ app.get('/about-us', (req, res) => {
 res.redirect('/about');
 });
 
-// 404 page(should be at the end coz the request looking for the match from top to bottom, so by this point if no match found by using use method we send 404 page to the browser) - also in this case we manually need to set the status to 404
+// 404 page (should be at the end coz the request looking for the match from top to bottom, so by this point if no match found by using use method we send 404 page to the browser) - also in this case we manually need to set the status to 404
 app.use((req, res) => {
 res.status(404).sendFile('./views/404.html', { root: __dirname });
 });
