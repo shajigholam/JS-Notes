@@ -1,0 +1,15 @@
+/* Add the Tailwind directives to your CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* for example this can be our own css code */
+.testing {
+    background: #f2f2f2;
+    border: 2px solid #777;
+}
+/* to be used as variable for arbitrary values */
+:root {
+    --primary: #1ecca6;
+    --leadFont: 1.2rem;
+  }

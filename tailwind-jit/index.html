@@ -1,0 +1,50 @@
+<!-- Tailwind CSS works by scanning all of your HTML files, JavaScript components, and any other templates for class names, generating the corresponding styles and then writing them to a static CSS file. -->
+<!-- once we have node installed, we can use tailwind CLI-->
+<!-- npx tailwindcss -o ./build/styles.css -->
+<!-- if we have our own .css file and want to use that, we should run npx tailwindcss -i ./src/styles.css -o ./build/styles.css -->
+<!-- just in time feature of tailwind help us to just have the css styles and classes that we used in our html pages instead of having the whole -->
+<!-- by using --JIT compiler flag. this tells tailwind that use just in time compiler. by using --purge flag tell tailwind which template files to look in  -->
+<!-- watch flag update the css file when we add some new classes to the html, so no need to run it every time you add a class -->
+<!-- npx tailwindcss -i ./src/styles.css -o ./build/styles.css --JIT --purge"./*.html" --watch -->
+<!-- instead of having jit and purge flag we can run npx tailwindcss init then modify the config file -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/build/styles.css">
+  <title>Tailwind JIT</title>
+</head>
+<body>
+    <div class="p-8 text-center">
+      <h1 class="text-4xl text-blue-600 font-bold">Tailwind JIT Tutorial</h1>
+      <h2 class="text-2xl text-gray-500 font-semibold">(Just in Time)</h2>
+    </div>
+
+    <div class="p-8 text-center">
+      <button class="bg-blue-600 text-white p-2 rounded">Click me</button>
+      <button class="bg-green-500 text-white p-2 rounded">Click me</button>
+    </div>
+
+    <!-- using some extra variants that are available in JIT -->
+    <div class="p-8">
+      <h3 class="first-letter:font-bold first-letter:text-green-500">Todos:</h3>
+      <ul class="my-4 marker:text-blue-600 list-disc">
+        <li class="marker:text-green-500">Get out of bed</li>
+        <li class="selection:bg-pink-500 selection:text-white">Play Mario Kart</li>
+        <li class="selection:bg-purple-500 selection:text-white">Do some work</li>
+      </ul>
+      <p class="first-line:font-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, incidunt natus voluptate facere soluta, provident sunt magnam culpa corrupti maxime quibusdam? Sunt maxime eaque numquam est at ipsum, officiis quo.</p>
+    </div>
+    <!-- using arbitrary values -->
+    <div class="p-8">
+      <button class="bg-[#f46225] text-[#fff6ca] p-2 rounded">click me</button>
+      <p class="text-[24px] mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum velit, aliquam, eum dolores esse voluptas maiores nulla illo fugit culpa deleniti autem suscipit animi accusamus nam quos dolor temporibus dolore.</p>
+    </div>
+    <!-- using the variable in the css file -->
+    <div class="p-8">
+      <button class="bg-[color:var(--primary)] text-white p-2 rounded">click me</button>
+      <p class="text-[length:var(--leadFont)]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, error. Dolorem eos earum placeat magnam distinctio non odio, aut provident, dolorum culpa tempore, natus aspernatur. Dolor recusandae quidem fugiat id.</p>
+    </div>
+</body>
+</html>
