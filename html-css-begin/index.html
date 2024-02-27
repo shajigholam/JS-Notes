@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Learning HTML & CSS</title>
+</head>
+<body>
+    <h1>HTML Forms</h1>
+    <form>
+        <!-- name is used for the server side -->
+        <label for="username">Enter Username:</label>
+        <input type="text" id="username" name="username" placeholder="username" required>
+        <br><br>
+        <label for="email">Enter Email:</label>
+        <input type="email" id="email" name="email" placeholder="your email" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="choose a password" required>
+
+        <p>Select your age:</p>
+        <!-- the values are the actual values we send to the back. -->
+        <!-- in radio types, we give the same name so the user can only select one of the options. if we want to allow choosing more than one choice so we can use different names. -->
+        <input type="radio" name="age" value="0-25" id="option-1">
+        <label for="option-1">0-25</label>
+        <input type="radio" name="age" value="26-50" id="option-2">
+        <label for="option-2">26-50</label>
+        <input type="radio" name="age" value="51+" id="option-3">
+        <label for="option-3">51+</label>
+
+        <br><br>
+        
+        <label for="question">Security Questions</label>
+        <select name="question" id="question">
+            <option value="q1">What is your favourite color?</option>
+            <option value="q2">What is your favourite animal?</option>
+            <option value="q3">What is your favourite food?</option>
+        </select>
+
+        <br><br>
+
+        <label for="answer">Security question answer:</label>
+        <input type="text" id="answer" name="answer">
+    </form>
+
+    <br><br>
+
+    <label for="bio">Your Bio:</label><br>
+    <textarea name="bio" id="bio" cols="30" rows="10" placeholder="about you..."></textarea>
+
+    <br><br>
+
+    <input type="submit" value="submit the form">
+    
+    <!-- Block-level elements take up the whole width of a page regardless of content(p,div,h1,li,ul,etc). they have block value for dispaly property by default
+    Inline elements don't take up any more room than their content needs(span, img, a, strong, etc.) -->
+
+    <h2>Inline elements</h2>
+
+    <span>span tag</span>
+    <em>em tag</em>
+    <a href="">anchor tag</a>
+    <span>span tag</span>
+
+    <h2>Block-level elements</h2>
+
+    <div>div tag</div>
+    <div>another div tag</div>
+    <h3>h3 tag</h3>
+    <p>paragraph tag</p>
+    <ul>
+        <li>li tag</li>
+        <li>another li tag</li>
+    </ul>
+    <div class="main">
+        <p class="error">Hello, My name is Samaneh. I am learning HTML and CSS. These are all basic materials, but helpful to recap later on</p>
+        <p class="success play">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <div class="success">This one has a success class</div>
+        <p id="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, ut consequatur neque inventore nesciunt at quo, fuga excepturi ex dolorum itaque nostrum quia eum voluptates nemo placeat! Accusantium, blanditiis velit?</p>
+
+    <div class="error">I'm an error</div>
+
+    <a href="https://wwww.google.com">Google</a>
+    <a href="https://wwww.microsoft.ca">Microsoft</a>
+</body>
+</html>

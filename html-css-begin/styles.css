@@ -1,0 +1,101 @@
+/* selector and decleration(property and value) 
+Hex codes -> 0 darkest, f brightest
+*/
+h1{
+    color: orange;
+    background-color: slategray;
+    font-size: 20px;
+    text-decoration: underline;
+    font-family: arial;
+    text-align: center;
+}
+p{
+    color: slategray;
+    text-align: right;
+    line-height: 30px;
+    letter-spacing: 3px;
+    column-count: 2;
+    column-gap: 60px;
+}
+ul{
+    /* border-width: 4px;
+    border-style: solid;
+    border-color: crimson; */
+    /* border: 4px solid crimson; */
+    border-bottom: 4px dotted crimson;
+    border-left: 8px dashed crimson;
+}
+li{
+    list-style-type: none;
+    /* text-shadow: 2px 2px lightgray; */
+    text-shadow: 2px 2px rgb(102, 13, 89);
+}
+span{
+    /* display: inline-block; by using inline-block, the elements still act like inline elements and seat next to each other but we can have margin all around and no collapse for padding*/
+    margin: 20px; /* inline elements only have margins to the right and left, so the margin will just affect them */
+    padding: 20px; /* all the way around - padding collapses in vertical manner */
+}
+div{
+    /* display: inline; */
+    border: 2px solid crimson;
+    margin: 20px; /* all the way around the element - margin collapse for block level elements*/
+    padding: 20px;
+}
+
+/* to target elements by their classes */
+.error{
+    color: aquamarine;
+}
+/* to target paragraph elements with classes */
+p.error.play{
+    color: beige;
+}
+/* to target elements by id */
+#content{
+    color: blue;
+}
+/* targeting children elements inside of the parent element(descendant selectors) */
+/* any p tag inside of a div tag */
+div p{
+    color: aqua;
+}
+/* target error classes if they are in the div element */
+div .error{
+    color: bisque;
+}
+/* ***Note: div.error target the div element with error class */
+
+/* attribute selector */
+a[href]{
+    background-color: aquamarine;
+}
+/* a[href="https://wwww.microsoft.com"] to shorten this: (any anchor tag that has microsoft in it)*/
+a[href*="microsoft"]{
+    background-color: #04402c;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* any anchor tag that its href attribute ends with .com */
+a[href$=".com"]{
+    background-color: #20ce94;
+    color: gray;
+    border: 2px solid blue;
+}
+
+/* inheritance:  child elements inherit CSS properties from parent elements 
+below we can see inheritance. any elements within div tags(child) inherit from it
+*/
+div{
+    color: lightcoral;
+    border: 1px solid gray;
+    margin: 40px;
+    font-weight: bold;
+}
+/* BUT some properties like margin and border just apply to the div. if for example we want the p tags inside of the div element get the same border and magin we do: */
+p{
+    border: inherit;
+    margin: inherit;
+    color: aqua; /*we can also override the parent properties*/
+}
