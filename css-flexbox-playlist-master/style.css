@@ -1,0 +1,49 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+/* 
+each of these boxes is block element which means they take up the whole width. so by using flex we put them next to each other 
+once we put the elements in a container and give it a flex, now we can manage their flexibility
+*/
+.flex-container{
+    display: flex;
+    background: #fff;
+    /* coz the min-width of each box is 200, as the screen gets smaller we use flex-wrap to avoid scrolling left and write to see the content*/
+    flex-wrap: wrap; /* also we have wrap-reverse */
+    /* flex-flow: column; changes the main axis*/
+    /* align-items: center; */ /* just apply to the cross axis */
+    /* justify-content: center; */ /* just apply to the main axis */
+}
+.box{
+    height: 100px;
+    /* min-width: 200px; */
+    /* whenever there is a space after the boxes, grow them: */
+    /*flex-grow: 1; */ /* so all grow by the same rate*/
+
+    /* we can have all in one line: */
+    flex: 1 0 100px; /* 1st: growth rate, 2nd: shrink rate, 3rd: flex basis*/
+}
+/* or we can give different growth rate to each and they grow base on that rate in the available free space*/
+.one{
+    background: red;
+    /*flex-shrink: 1; /* the rate for shrinking the element as the screen gets smaller*/
+}
+.two{
+    background: blue;
+    /* flex-shrink: 2; */
+}
+.three{
+    background: green;
+    /* flex-shrink: 3; */
+}
